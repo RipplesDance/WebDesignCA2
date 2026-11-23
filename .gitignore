@@ -1,0 +1,23 @@
+# Track the website source, images and the assignment brief.
+*
+!*/
+!.gitignore
+!*.html
+!*.css
+!*.js
+!*.jpg
+!*.jpeg
+!*.png
+!*.webp
+!*.avif
+!*.gif
+!*.svg
+!*.ico
+!/CA 2 - Web Design Group Project 60% Moodle (2).docx
+
+# Local tooling and dependency folders.
+.agents/
+.codex/
+.vscode/
+.idea/
+node_modules/
