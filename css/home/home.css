@@ -5,8 +5,7 @@
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease;
-  touch-action: pan-y pinch-zoom;
+  transition: all 0.5s;
 }
 
 .slide {
@@ -36,7 +35,6 @@
 .hero {
   position: relative;
   width: 42%;
-  min-width: 21.875rem;
   max-width: 38rem;
   padding: 2.5rem;
   border: 1px solid #4c3326;
@@ -49,7 +47,7 @@
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .hero p {
@@ -68,9 +66,7 @@
   font-size: 1.375rem;
   font-weight: 600;
   text-decoration: none;
-  transition:
-    background-color 0.15s,
-    color 0.15s;
+  transition: all 0.15s;
 }
 
 .hero-button:hover {
@@ -99,7 +95,6 @@
   cursor: pointer;
 }
 
-.slider-dots button:hover {
+.slider-dots .active {
   background-color: #fffcf5;
-  box-shadow: 0 0 0 2px #2568b9;
 }
