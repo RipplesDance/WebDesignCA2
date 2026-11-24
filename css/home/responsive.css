@@ -1,12 +1,4 @@
 @media screen and (max-width: 1100px) {
-  .nav-img-container {
-    width: 13rem;
-  }
-
-  .nav-actions a {
-    font-size: 1.1875rem;
-  }
-
   .slide {
     min-height: 500px;
   }
@@ -67,25 +59,6 @@
   .slider-dots {
     top: 254px;
     bottom: auto;
-  }
-}
-
-@media screen and (max-width: 671px) {
-  nav {
-    flex-wrap: wrap;
-  }
-
-  .nav-img-container {
-    width: 10.75rem;
-  }
-
-  .nav-actions {
-    width: 100%;
-    gap: 0.375rem 1.125rem;
-  }
-
-  .nav-actions a {
-    font-size: 1.125rem;
   }
 }
 
