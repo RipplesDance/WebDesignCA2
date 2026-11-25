@@ -60,6 +60,15 @@
     top: 254px;
     bottom: auto;
   }
+
+  .testimonial-copy h2 {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-wheel button {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -74,5 +83,18 @@
 
   .slider-dots {
     top: 190px;
+  }
+
+  .testimonial-copy h2 {
+    font-size: 1rem;
+  }
+
+  .testimonial-quote {
+    font-size: 0.75rem;
+  }
+
+  .testimonial-wheel button {
+    width: 3rem;
+    height: 3rem;
   }
 }
