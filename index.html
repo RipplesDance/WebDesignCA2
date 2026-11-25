@@ -11,8 +11,10 @@
     <link href="./css/shared.css" rel="stylesheet" />
     <link href="./css/nav.css" rel="stylesheet" />
     <link href="./css/home/home.css" rel="stylesheet" />
+    <link href="./css/home/testimonials.css" rel="stylesheet" />
     <link href="./css/home/responsive.css" rel="stylesheet" />
     <script src="./javascript/home/slider.js" defer></script>
+    <script src="./javascript/home/testimonials.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,7 +32,7 @@
     </header>
 
     <main>
-      <section class="slider" aria-label="Hidden Bean highlights">
+      <section class="slider">
         <div class="slides">
           <article class="slide">
             <div class="background-img coffee-img"></div>
@@ -67,15 +69,77 @@
             </div>
           </article>
         </div>
-        <div class="slider-dots" role="group" aria-label="Choose a slide">
-          <button
-            class="active"
-            type="button"
-            aria-label="Home slide"
-          ></button>
+        <div class="slider-dots">
+          <button class="active" type="button" aria-label="Home slide"></button>
           <button type="button" aria-label="About slide"></button>
           <button type="button" aria-label="Coffee slide"></button>
           <button type="button" aria-label="Contact slide"></button>
+        </div>
+      </section>
+      <section class="testimonials">
+        <div class="testimonial-stage">
+          <div class="testimonial-copy">
+            <h2>What customers said</h2>
+            <p class="testimonial-quote" aria-live="polite">
+              "The medium roast make a nice morning cup."
+            </p>
+          </div>
+          <div class="testimonial-wheel">
+            <button
+              type="button"
+              data-quote='"The medium roast make a nice morning cup."'
+            >
+              <img
+                src="./res/index/testimonial/portrait-01.jpg"
+                alt="Smiling man in a light-blue shirt"
+              />
+            </button>
+            <button
+              type="button"
+              data-quote='"The light roast was bright and easy to brew."'
+            >
+              <img
+                src="./res/index/testimonial/portrait-02.jpg"
+                alt="Woman with short brown hair"
+              />
+            </button>
+            <button
+              type="button"
+              data-quote='"I like the cocona notes in my morning coffee."'
+            >
+              <img
+                src="./res/index/testimonial/portrait-03.jpg"
+                alt="Man with curly hair in a dark-red shirt"
+              />
+            </button>
+            <button
+              type="button"
+              data-quote='"The roast guide help me choose my first bag."'
+            >
+              <img
+                src="./res/index/testimonial/portrait-04.jpg"
+                alt="Man sitting on grass ground"
+              />
+            </button>
+            <button
+              type="button"
+              data-quote='"The dark roast taste grand."'
+            >
+              <img
+                src="./res/index/testimonial/portrait-05.jpg"
+                alt="Man in a blue shirt sitting outdoors"
+              />
+            </button>
+            <button
+              type="button"
+              data-quote='"It make the most lovely cup in my whole life."'
+            >
+              <img
+                src="./res/index/testimonial/portrait-06.jpg"
+                alt="Man in a white shirt"
+              />
+            </button>
+          </div>
         </div>
       </section>
     </main>
