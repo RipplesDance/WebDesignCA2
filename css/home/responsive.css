@@ -15,6 +15,10 @@
   .hero p {
     font-size: 1.25rem;
   }
+
+  .gallery-grid {
+    grid-auto-rows: max(10vw, 13vh);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -69,6 +73,45 @@
     width: 4.25rem;
     height: 4.25rem;
   }
+
+  .gallery {
+    padding: 2rem 16vw 3rem;
+  }
+
+  .gallery.has-webgl {
+    padding-bottom: max(3rem, calc(58vh - 14rem));
+  }
+
+  .gallery h3 {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: max(23vw, 22vh);
+    column-gap: 22%;
+  }
+
+  .supported {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .supported h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .supported-card {
+    width: 9rem;
+    min-height: 8rem;
+    font-size: 1rem;
+  }
+
+  .supported-card img {
+    width: 5rem;
+    height: 3rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -96,5 +139,64 @@
   .testimonial-wheel button {
     width: 3rem;
     height: 3rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .gallery {
+    padding-left: clamp(17vw, 10vh, 25vw);
+    padding-right: clamp(17vw, 10vh, 25vw);
+  }
+
+  .gallery h3 {
+    font-size: 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    column-gap: 0;
+    row-gap: max(3rem, 9vh);
+  }
+
+  .gallery-tall,
+  .gallery-wide {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gallery-card img {
+    height: auto;
+  }
+}
+
+@media (hover: hover) {
+  .gallery-card img {
+    transition: transform 180ms ease;
+  }
+
+  .gallery-card:not(.is-rendering):hover img {
+    transform: scale(1.04);
+    cursor: pointer;
+  }
+
+  .supported-window {
+    padding: 0.375rem 0;
+  }
+
+  .supported-window:hover {
+    cursor: pointer;
+  }
+
+  .supported-window:hover .supported-track {
+    animation-play-state: paused;
+  }
+
+  .supported-card {
+    transition: transform 180ms ease;
+  }
+
+  .supported-card:hover {
+    transform: scale(1.04);
   }
 }
