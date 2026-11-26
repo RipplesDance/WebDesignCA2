@@ -1,0 +1,60 @@
+.supported {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.supported h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.supported-window {
+  overflow: hidden;
+}
+
+.supported-track {
+  display: flex;
+  width: max-content;
+  animation: supported-scroll 48s linear infinite;
+}
+
+.supported-countries {
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+  list-style: none;
+}
+
+.supported-card {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  width: 10.5rem;
+  min-height: 9.25rem;
+  padding: 1rem 0.5rem;
+  border: 1px solid #bd916d;
+  border-radius: 1rem;
+  background-color: #f5ebdd;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.supported-card img {
+  display: block;
+  width: 6.25rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+@keyframes supported-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
