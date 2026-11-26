@@ -13,7 +13,9 @@
     return shader;
   }
 
-  const vertex = makeShader(gl.VERTEX_SHADER, `
+  const vertex = makeShader(
+    gl.VERTEX_SHADER,
+    `
     attribute vec2 point;
     varying vec2 uv;
 
@@ -21,9 +23,12 @@
       gl_Position = vec4(point, 0.0, 1.0);
       uv = vec2(point.x, -point.y) * 0.5 + 0.5;
     }
-  `);
+  `,
+  );
 
-  const fragment = makeShader(gl.FRAGMENT_SHADER, `
+  const fragment = makeShader(
+    gl.FRAGMENT_SHADER,
+    `
     precision highp float;
     varying vec2 uv;
     uniform sampler2D photo;
@@ -54,7 +59,8 @@
       float alpha = (red.a + green.a + blue.a) / 3.0;
       gl_FragColor = vec4(red.r, green.g, blue.b, alpha);
     }
-  `);
+  `,
+  );
 
   const program = gl.createProgram();
   gl.attachShader(program, vertex);
@@ -63,10 +69,19 @@
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
   gl.useProgram(program);
   gl.enable(gl.BLEND);
-  gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+  gl.blendFuncSeparate(
+    gl.SRC_ALPHA,
+    gl.ONE_MINUS_SRC_ALPHA,
+    gl.ONE,
+    gl.ONE_MINUS_SRC_ALPHA,
+  );
 
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  gl.bufferData(
+    gl.ARRAY_BUFFER,
+    new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
+    gl.STATIC_DRAW,
+  );
   const point = gl.getAttribLocation(program, "point");
   gl.enableVertexAttribArray(point);
   gl.vertexAttribPointer(point, 2, gl.FLOAT, false, 0, 0);
@@ -88,7 +103,14 @@
     const texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
     try {
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+      gl.texImage2D(
+        gl.TEXTURE_2D,
+        0,
+        gl.RGBA,
+        gl.RGBA,
+        gl.UNSIGNED_BYTE,
+        image,
+      );
     } catch {
       gl.deleteTexture(texture);
       return null;
@@ -114,7 +136,9 @@
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     const boxes = cards.map(({ card }) => card.getBoundingClientRect());
-    const corner = parseFloat(getComputedStyle(cards[0].image).borderTopLeftRadius);
+    const corner = parseFloat(
+      getComputedStyle(cards[0].image).borderTopLeftRadius,
+    );
     cards.forEach((entry, index) => {
       const { card, image } = entry;
       const { left, top, width, height } = boxes[index];
@@ -122,19 +146,25 @@
       const offset = (2 * centerY) / viewportHeight - 1;
       const visible = centerY - height < viewportHeight && offset > -0.25;
 
-      if (visible && image.complete && image.naturalWidth && entry.texture === undefined) {
+      if (
+        visible &&
+        image.complete &&
+        image.naturalWidth &&
+        entry.texture === undefined
+      ) {
         entry.texture = loadTexture(image);
       }
       const active = visible && Boolean(entry.texture);
       card.classList.toggle("is-rendering", active);
       if (!active) return;
 
-      const aspect = (image.naturalWidth * height) / (image.naturalHeight * width);
+      const aspect =
+        (image.naturalWidth * height) / (image.naturalHeight * width);
       gl.viewport(
         Math.round((left - width / 2) * ratio),
         Math.round((viewportHeight - centerY - height) * ratio),
         Math.round(width * 2 * ratio),
-        Math.round(height * 2 * ratio)
+        Math.round(height * 2 * ratio),
       );
       gl.bindTexture(gl.TEXTURE_2D, entry.texture);
       gl.uniform2f(size, width, height);
@@ -158,3 +188,4 @@
   window.addEventListener("resize", requestGalleryFrame);
   requestGalleryFrame();
 })();
+console.log("123");
